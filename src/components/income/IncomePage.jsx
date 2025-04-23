@@ -12,11 +12,10 @@ const IncomePage = () => {
     description: ''
   });
 
-  const handleSubmit = (e) => {
+  const handleIncomeSubmit = (e, submittedIncome) => { // Receive 'e' as the first argument
     e.preventDefault();
     addIncome({
-      ...newIncome,
-      amount: parseFloat(newIncome.amount),
+      ...submittedIncome, // Use the submitted data
       id: Date.now()
     });
     setNewIncome({
@@ -35,10 +34,10 @@ const IncomePage = () => {
   return (
     <div className="income-page">
       <h2>Income Tracking</h2>
-      <IncomeForm 
-        income={newIncome} 
-        onChange={handleChange} 
-        onSubmit={handleSubmit} 
+      <IncomeForm
+        income={newIncome}
+        onChange={handleChange}
+        onSubmit={handleIncomeSubmit}
       />
       <IncomeList incomes={incomes} />
     </div>
@@ -46,5 +45,4 @@ const IncomePage = () => {
 };
 
 export default IncomePage;
-// This component manages the income tracking functionality.
-// It includes a form for adding new income sources and a list to display existing incomes.
+// This component is responsible for rendering the income tracking page.

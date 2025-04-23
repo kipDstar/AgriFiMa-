@@ -1,5 +1,36 @@
 {
-  "incomes": [],
+  "incomes": [
+    {
+      "source": "milk sale",
+      "amount": 5000,
+      "date": "2025-02-12",
+      "description": "dairy",
+      "id": 1745426590547,
+      "timestamp": "2025-04-23T16:43:10.547Z"
+    },
+    {
+      "source": "Kapchorwa Dairy farm",
+      "amount": 15000,
+      "date": "2025-02-18",
+      "description": "Milk was sold @50 litre",
+      "category": "dairy",
+      "product": "Milk",
+      "volume": 300,
+      "id": 1745426901757,
+      "timestamp": "2025-04-23T16:48:21.757Z"
+    },
+    {
+      "source": "Meat sale",
+      "amount": 200000,
+      "date": "2025-03-12",
+      "description": "from slaughtered Zebu at Kapchorwa farm",
+      "category": "livestock",
+      "product": "Beef",
+      "volume": 4000,
+      "id": 1745427031806,
+      "timestamp": "2025-04-23T16:50:31.806Z"
+    }
+  ],
   "expenses": [
     {
       "item": "seeds",

@@ -1,11 +1,12 @@
-// 5. FINALLY, the corrected IncomeForm.jsx with guaranteed working submission
 import React, { useState } from 'react';
-import categories  from '../../utilis/categories';
+import categories from '../../utilis/categories';
 
-const IncomeForm = ({ onSubmit }) => {
-  const [income, setIncome] = useState({
+const IncomeForm = ({ onSubmit, income: initialIncome, onChange: onInputChange }) => {
+  const [income, setIncome] = useState(initialIncome || {
     source: '',
     category: 'crop',
+    product: '', // New field
+    volume: '',   // New field
     amount: '',
     date: new Date().toISOString().split('T')[0],
     description: ''
@@ -14,44 +15,51 @@ const IncomeForm = ({ onSubmit }) => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setIncome(prev => ({ ...prev, [name]: value }));
+    if (onInputChange) {
+      onInputChange(e);
+    }
   };
 
   const handleSubmit = (e) => {
-    // First check if we received an event object
     if (e && e.preventDefault) {
       e.preventDefault();
     }
 
-    // Validate required fields
-    if (!income.source || !income.amount || !income.date) {
-      alert('Please fill all required fields');
+    if (!income.source || !income.amount || !income.date || !income.category) {
+      alert('Please fill all required fields (Source, Category, Amount, Date)');
       return;
     }
 
-    // Convert amount to number
     const amountValue = parseFloat(income.amount);
     if (isNaN(amountValue) || amountValue <= 0) {
       alert('Please enter a valid amount');
       return;
     }
 
-    // Prepare submission data
+    // Ensure volume is a number if entered
+    const volumeValue = income.volume ? parseFloat(income.volume) : '';
+    if (income.volume && (isNaN(volumeValue) || volumeValue < 0)) {
+      alert('Please enter a valid volume');
+      return;
+    }
+
     const submissionData = {
       ...income,
       amount: amountValue,
+      volume: volumeValue, // Include volume in submission
       id: Date.now(),
       timestamp: new Date().toISOString()
     };
 
-    // Call the onSubmit prop
     if (onSubmit && typeof onSubmit === 'function') {
-      onSubmit(submissionData);
+      onSubmit(e, submissionData);
     }
 
-    // Reset form
     setIncome({
       source: '',
       category: 'crop',
+      product: '',
+      volume: '',
       amount: '',
       date: new Date().toISOString().split('T')[0],
       description: ''
@@ -85,6 +93,30 @@ const IncomeForm = ({ onSubmit }) => {
             </option>
           ))}
         </select>
+      </div>
+
+      {/* New Product Input */}
+      <div className="form-group">
+        <label>Product</label>
+        <input
+          type="text"
+          name="product"
+          value={income.product}
+          onChange={handleChange}
+        />
+      </div>
+
+      {/* New Volume (kg) Input */}
+      <div className="form-group">
+        <label>Volume (kg)</label>
+        <input
+          type="number"
+          name="volume"
+          value={income.volume}
+          onChange={handleChange}
+          min="0"
+          step="0.01"
+        />
       </div>
 
       <div className="form-group">

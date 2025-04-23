@@ -1,10 +1,7 @@
 import React, { createContext, useState, useEffect } from 'react';
 import { 
-  fetchIncomes, 
-  fetchExpenses, 
-  fetchLoans,
-  addIncome as apiAddIncome,
-  addExpense as apiAddExpense
+  fetchIncomes, addIncome, deleteIncome,
+  fetchExpenses, addExpense, deleteExpense
 } from '../api/apiService';
 
 export const FinanceContext = createContext();
@@ -12,21 +9,19 @@ export const FinanceContext = createContext();
 export function FinanceProvider({ children }) {
   const [incomes, setIncomes] = useState([]);
   const [expenses, setExpenses] = useState([]);
-  const [loans, setLoans] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
+  // Load initial data
   useEffect(() => {
     const loadData = async () => {
       setIsLoading(true);
       try {
-        const [incomeData, expenseData, loanData] = await Promise.all([
+        const [incomeData, expenseData] = await Promise.all([
           fetchIncomes(),
-          fetchExpenses(),
-          fetchLoans()
+          fetchExpenses()
         ]);
         setIncomes(incomeData);
         setExpenses(expenseData);
-        setLoans(loanData);
       } catch (error) {
         console.error('Error loading data:', error);
       } finally {
@@ -36,32 +31,48 @@ export function FinanceProvider({ children }) {
     loadData();
   }, []);
 
-  const addIncome = async (income) => {
+  // Income methods
+  const handleAddIncome = async (income) => {
     try {
-      const newIncome = await apiAddIncome(income);
+      const newIncome = await addIncome(income);
       setIncomes(prev => [...prev, newIncome]);
+      return newIncome;
     } catch (error) {
       console.error('Error adding income:', error);
+      throw error;
     }
   };
 
-  const addExpense = async (expense) => {
+  const handleDeleteIncome = async (id) => {
     try {
-      const newExpense = await apiAddExpense(expense);
+      await deleteIncome(id);
+      setIncomes(prev => prev.filter(item => item.id !== id));
+    } catch (error) {
+      console.error('Error deleting income:', error);
+      throw error;
+    }
+  };
+
+  // Expense methods
+  const handleAddExpense = async (expense) => {
+    try {
+      const newExpense = await addExpense(expense);
       setExpenses(prev => [...prev, newExpense]);
+      return newExpense;
     } catch (error) {
       console.error('Error adding expense:', error);
+      throw error;
     }
   };
 
-  const calculateProfitLoss = () => {
-    const totalIncome = incomes.reduce((sum, item) => sum + Number(item.amount), 0);
-    const totalExpenses = expenses.reduce((sum, item) => sum + Number(item.cost), 0);
-    return {
-      profit: totalIncome > totalExpenses ? totalIncome - totalExpenses : 0,
-      loss: totalExpenses > totalIncome ? totalExpenses - totalIncome : 0,
-      net: totalIncome - totalExpenses
-    };
+  const handleDeleteExpense = async (id) => {
+    try {
+      await deleteExpense(id);
+      setExpenses(prev => prev.filter(item => item.id !== id));
+    } catch (error) {
+      console.error('Error deleting expense:', error);
+      throw error;
+    }
   };
 
   return (
@@ -69,16 +80,14 @@ export function FinanceProvider({ children }) {
       value={{
         incomes,
         expenses,
-        loans,
         isLoading,
-        addIncome,
-        addExpense,
-        calculateProfitLoss
+        addIncome: handleAddIncome,
+        deleteIncome: handleDeleteIncome,
+        addExpense: handleAddExpense,
+        deleteExpense: handleDeleteExpense,
       }}
     >
       {children}
     </FinanceContext.Provider>
   );
 }
-// This context provides the financial data and functions to manage incomes, expenses, and loans.
-// It fetches data from the API and provides functions to add new incomes and expenses.

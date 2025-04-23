@@ -1,0 +1,74 @@
+{
+  "incomes": [],
+  "expenses": [
+    {
+      "item": "seeds",
+      "category": "seeds",
+      "cost": 4000,
+      "date": "2025-04-23T00:00:00.000Z",
+      "id": 1
+    },
+    {
+      "item": "seeds",
+      "category": "seeds",
+      "cost": 4000,
+      "date": "2025-04-23T00:00:00.000Z",
+      "id": 2
+    },
+    {
+      "item": "seeds",
+      "category": "seeds",
+      "cost": 4000,
+      "date": "2025-04-02T00:00:00.000Z",
+      "id": 3
+    },
+    {
+      "item": "seeds",
+      "category": "seeds",
+      "cost": 4000,
+      "date": "2025-04-02T00:00:00.000Z",
+      "id": 4
+    },
+    {
+      "item": "milk containers",
+      "category": "equipment",
+      "cost": 4900,
+      "date": "2025-04-03T00:00:00.000Z",
+      "id": 5
+    },
+    {
+      "item": "hoes",
+      "category": "equipment",
+      "cost": 599,
+      "date": "2025-04-02T00:00:00.000Z",
+      "id": 6
+    },
+    {
+      "item": "hyh",
+      "category": "labor",
+      "cost": 777,
+      "date": "2025-01-29T00:00:00.000Z",
+      "id": 7
+    }
+  ],
+  "loans": [
+    {
+      "id": 1,
+      "bank": "KCB",
+      "name": "Agri-Business Loan",
+      "interestRate": "12%",
+      "term": "24 months",
+      "maxAmount": "500000",
+      "requirements": "Farm registration, 6 months bank statements"
+    },
+    {
+      "id": 2,
+      "bank": "COOP",
+      "name": "Farm Input Loan",
+      "interestRate": "10%",
+      "term": "12 months",
+      "maxAmount": "200000",
+      "requirements": "Membership, land title"
+    }
+  ]
+}

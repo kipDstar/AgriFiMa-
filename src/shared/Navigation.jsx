@@ -114,7 +114,9 @@ const Navigation = () => {
 
       {!isCollapsed && (
         <div className="nav-footer">
-          <p>Need help? Contact support</p>
+          <p>Need help? Contact support:Jesse Kipsang</p>
+          <p>Email: kipsangjesse17@gmail.com</p>
+          <p>Phone: +254 712 345 678</p>
           <small>v1.0.0</small>
         </div>
       )}

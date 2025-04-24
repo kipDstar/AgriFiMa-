@@ -5,8 +5,8 @@ const IncomeForm = ({ onSubmit, income: initialIncome, onChange: onInputChange }
   const [income, setIncome] = useState(initialIncome || {
     source: '',
     category: 'crop',
-    product: '', // New field
-    volume: '',   // New field
+    product: '', 
+    volume: '',  
     amount: '',
     date: new Date().toISOString().split('T')[0],
     description: ''
@@ -26,6 +26,7 @@ const IncomeForm = ({ onSubmit, income: initialIncome, onChange: onInputChange }
     }
 
     if (!income.source || !income.amount || !income.date || !income.category) {
+      console.log(income.source, income.amount, income.date, income.category);
       alert('Please fill all required fields (Source, Category, Amount, Date)');
       return;
     }

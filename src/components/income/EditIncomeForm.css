@@ -1,0 +1,78 @@
+.edit-income-form {
+    background-color: #f0f4c3; /* Light yellow background */
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .edit-income-form h2 {
+    margin-bottom: 20px;
+    color: #558b2f; /* Darker green title */
+  }
+  
+  .edit-income-form .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .edit-income-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #33691e; /* Dark green label */
+    font-weight: bold;
+  }
+  
+  .edit-income-form input[type="text"],
+  .edit-income-form input[type="number"],
+  .edit-income-form input[type="date"],
+  .edit-income-form select,
+  .edit-income-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #81c784; /* Light green border */
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1em;
+  }
+  
+  .edit-income-form textarea {
+    resize: vertical;
+  }
+  
+  .edit-income-form .form-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end; /* Push buttons to the right */
+    margin-top: 20px;
+  }
+  
+  
+  .edit-income-form .save-button {
+    background-color: #81c784; /* Light green save button */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+  }
+  
+  .edit-income-form .save-button:hover {
+    background-color: #388e3c; /* Darker green on hover */
+  }
+  
+  .edit-income-form .cancel-button {
+    background-color: #e57373; /* Light red cancel button */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+  }
+  
+  .edit-income-form .cancel-button:hover {
+    background-color: #c62828; /* Darker red on hover */
+  }

@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { FinanceContext } from '../../context/FinanceContext';
 import LoanCard from './LoanCard';
+import './LoansStyles.css'; // Import the CSS
 
 const LoansPage = () => {
   const { loans, isLoading } = useContext(FinanceContext);
@@ -11,7 +12,7 @@ const LoansPage = () => {
       {isLoading ? (
         <p>Loading loan options...</p>
       ) : (
-        <div className="loan-grid">
+        <div className="loan-grid"> {/* Use the grid container */}
           {loans.map(loan => (
             <LoanCard key={loan.id} loan={loan} />
           ))}
@@ -22,5 +23,3 @@ const LoansPage = () => {
 };
 
 export default LoansPage;
-// This component fetches and displays a list of available loan options.
-// It uses the LoanCard component to display each loan's details.

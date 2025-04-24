@@ -1,7 +1,7 @@
 import React from 'react';
-//import './ExpenseList.css';
+//import './ExpenseList.css'; // Uncomment if you have a CSS file
 
-const ExpenseList = ({ expenses }) => {
+const ExpenseList = ({ expenses, onDeleteExpense, onEditExpense }) => {
   return (
     <div className="expense-list">
       <h3>Recent Expenses</h3>
@@ -15,6 +15,7 @@ const ExpenseList = ({ expenses }) => {
               <th>Item</th>
               <th>Category</th>
               <th>Amount</th>
+              <th>Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -24,6 +25,10 @@ const ExpenseList = ({ expenses }) => {
                 <td>{expense.item}</td>
                 <td>{expense.category}</td>
                 <td>KSh {expense.cost.toLocaleString()}</td>
+                <td>
+                  <button onClick={() => onEditExpense(expense)} className="edit-button">Edit</button>
+                  <button onClick={() => onDeleteExpense(expense.id)} className="delete-button">Delete</button>
+                </td>
               </tr>
             ))}
           </tbody>
@@ -34,5 +39,3 @@ const ExpenseList = ({ expenses }) => {
 };
 
 export default ExpenseList;
-// This component displays a list of recent expenses.
-// It shows the date, item, category, and amount for each expense.

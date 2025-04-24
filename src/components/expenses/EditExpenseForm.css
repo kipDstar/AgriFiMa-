@@ -1,0 +1,73 @@
+.edit-expense-form {
+    background-color: #ffe0b2; /* Light orange background */
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .edit-expense-form h2 {
+    margin-bottom: 20px;
+    color: #e65100; /* Dark orange title */
+  }
+  
+  /* Add other styles similar to EditIncomeForm.css, adjusting colors */
+  .edit-expense-form .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .edit-expense-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #e65100;
+    font-weight: bold;
+  }
+  
+  .edit-expense-form input[type="text"],
+  .edit-expense-form input[type="number"],
+  .edit-expense-form input[type="date"],
+  .edit-expense-form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ffb74d;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1em;
+  }
+  
+  .edit-expense-form .form-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 20px;
+  }
+  
+  .edit-expense-form .save-button {
+    background-color: #ffb74d;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+  }
+  
+  .edit-expense-form .save-button:hover {
+    background-color: #f57c00;
+  }
+  
+  .edit-expense-form .cancel-button {
+    background-color: #e57373;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+  }
+  
+  .edit-expense-form .cancel-button:hover {
+    background-color: #c62828;
+  }

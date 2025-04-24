@@ -46,5 +46,11 @@ A React application for small-scale farmers to track income, expenses, and explo
 - `src/api/` - API service functions
 - `src/components/` - React components
 - `src/context/` - State management
-- `src/utils/` - Helper functions
+- `src/utilis/` - Helper functions
 - `db.json` - Mock database
+- `src/context/` - Handling context
+
+## Web Page screenshot
+![alt text](image.png)
+
+

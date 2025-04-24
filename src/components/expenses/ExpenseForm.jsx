@@ -30,6 +30,7 @@ const ExpenseForm = ({ onExpenseAdded }) => {
         cost: parseFloat(formData.cost),
         date: new Date(formData.date).toISOString()
       };
+      console.log("Expense Data being sent:", expenseData);
       
       const createdExpense = await createExpense(expenseData);
       onExpenseAdded(createdExpense);

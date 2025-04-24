@@ -1,6 +1,6 @@
 import React from 'react';
 
-const IncomeList = ({ incomes }) => {
+const IncomeList = ({ incomes, onDeleteIncome, onEditIncome }) => {
   return (
     <div className="income-list">
       <h3>Income Records</h3>
@@ -13,6 +13,7 @@ const IncomeList = ({ incomes }) => {
             <th>Product</th>
             <th>Volume (kg)</th>
             <th>Amount (KSH)</th>
+            <th>Actions</th> 
           </tr>
         </thead>
         <tbody>
@@ -24,6 +25,10 @@ const IncomeList = ({ incomes }) => {
               <td>{income.product}</td>
               <td>{income.volume}</td>
               <td>{income.amount.toLocaleString()}</td>
+              <td>
+                <button onClick={() => onEditIncome(income)} className="edit-button">Edit</button>
+                <button onClick={() => onDeleteIncome(income.id)} className="delete-button">Delete</button>
+              </td>
             </tr>
           ))}
         </tbody>

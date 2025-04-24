@@ -1,14 +1,6 @@
 {
   "incomes": [
     {
-      "source": "milk sale",
-      "amount": 5000,
-      "date": "2025-02-12",
-      "description": "dairy",
-      "id": 1745426590547,
-      "timestamp": "2025-04-23T16:43:10.547Z"
-    },
-    {
       "source": "Kapchorwa Dairy farm",
       "amount": 15000,
       "date": "2025-02-18",
@@ -20,7 +12,7 @@
       "timestamp": "2025-04-23T16:48:21.757Z"
     },
     {
-      "source": "Meat sale",
+      "source": "Meat-sale",
       "amount": 200000,
       "date": "2025-03-12",
       "description": "from slaughtered Zebu at Kapchorwa farm",
@@ -29,57 +21,87 @@
       "volume": 4000,
       "id": 1745427031806,
       "timestamp": "2025-04-23T16:50:31.806Z"
+    },
+    {
+      "source": "goat",
+      "amount": 1000,
+      "date": "2024-11-07",
+      "description": "",
+      "product": "meat",
+      "volume": 388,
+      "category": "livestock",
+      "id": 1745481628456,
+      "timestamp": "2025-04-24T08:00:28.456Z"
+    },
+    {
+      "source": "Machinnery disposal",
+      "amount": 900000,
+      "date": "2025-04-17",
+      "description": "",
+      "product": "Old Tractor",
+      "volume": 3000,
+      "category": "other",
+      "id": 1745481731022,
+      "timestamp": "2025-04-24T08:02:11.022Z"
+    },
+    {
+      "source": "sale",
+      "amount": 70000,
+      "date": "2025-04-24",
+      "description": "ikki",
+      "product": "milk",
+      "volume": 699,
+      "category": "dairy",
+      "id": 1745486168638,
+      "timestamp": "2025-04-24T09:16:08.638Z"
+    },
+    {
+      "source": "Poultry sale",
+      "category": "livestock",
+      "product": "Chicken Meat",
+      "volume": 200,
+      "amount": 20000,
+      "date": "2023-02-10",
+      "description": "Sold 98 chicken",
+      "id": 1745486249526,
+      "timestamp": "2025-04-24T09:17:29.526Z"
     }
   ],
   "expenses": [
     {
-      "item": "seeds",
-      "category": "seeds",
-      "cost": 4000,
-      "date": "2025-04-23T00:00:00.000Z",
+      "item": "battery",
+      "category": "equipment",
+      "cost": 50000,
+      "date": "2025-04-16T00:00:00.000Z",
       "id": 1
     },
     {
-      "item": "seeds",
-      "category": "seeds",
-      "cost": 4000,
-      "date": "2025-04-23T00:00:00.000Z",
+      "item": "hammer",
+      "category": "equipment",
+      "cost": 1500,
+      "date": "2025-03-20T00:00:00.000Z",
       "id": 2
     },
     {
-      "item": "seeds",
-      "category": "seeds",
-      "cost": 4000,
-      "date": "2025-04-02T00:00:00.000Z",
+      "item": "Arrow",
+      "category": "equipment",
+      "cost": 150000,
+      "date": "2025-02-21T00:00:00.000Z",
       "id": 3
     },
     {
-      "item": "seeds",
+      "item": "maize seeds",
       "category": "seeds",
-      "cost": 4000,
-      "date": "2025-04-02T00:00:00.000Z",
+      "cost": 50000,
+      "date": "2025-03-15T00:00:00.000Z",
       "id": 4
     },
     {
-      "item": "milk containers",
+      "item": "Back-up Generator",
       "category": "equipment",
-      "cost": 4900,
-      "date": "2025-04-03T00:00:00.000Z",
+      "cost": 30000,
+      "date": "2025-04-24T00:00:00.000Z",
       "id": 5
-    },
-    {
-      "item": "hoes",
-      "category": "equipment",
-      "cost": 599,
-      "date": "2025-04-02T00:00:00.000Z",
-      "id": 6
-    },
-    {
-      "item": "hyh",
-      "category": "labor",
-      "cost": 777,
-      "date": "2025-01-29T00:00:00.000Z",
-      "id": 7
     }
   ],
   "loans": [

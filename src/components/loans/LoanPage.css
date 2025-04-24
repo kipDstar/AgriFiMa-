@@ -1,0 +1,47 @@
+.loans-page {
+    padding: 20px;
+  }
+  
+  .loans-page h2 {
+    margin-bottom: 20px;
+    color: #388e3c; 
+  }
+  
+  .loan-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 20px; /
+  }
+  
+  .loan-card {
+    background: #f5f5f5; /* Light grey background */
+     border-radius: 8px;
+     padding: 20px;
+     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+     transition: transform 0.3s;
+    }
+    .loan-card:hover {
+        transform: scale(1.02);
+    }
+    .loan-card h3 {
+        margin: 0 0 10px;
+        color: #388e3c; /* Darker green title */
+    }
+    .loan-card p {
+        margin: 5px 0;
+        color: #555; /* Dark grey text */
+    }
+    .loan-card button {
+        background-color: #388e3c; /* Darker green */
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background-color 0.3s;
+    }
+    .loan-card button:hover {
+        background-color: #2e7d32; /* Even darker green on hover */
+    }
+  

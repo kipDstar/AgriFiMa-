@@ -1,42 +1,65 @@
-import React, { useEffect, useState } from 'react';
-import { getExpenses } from '../../api/expenseApi';
+import React, { useState, useContext } from 'react';
+import { FinanceContext } from '../../context/FinanceContext';
 import ExpenseForm from './ExpenseForm';
 import ExpenseList from './ExpenseList';
+import EditExpenseForm from './EditExpenseForm';
 
 const ExpensesPage = () => {
-  const [expenses, setExpenses] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const { expenses, addExpense, deleteExpense, updateExpense, fetchExpenses } = useContext(FinanceContext);
+  const [isEditing, setIsEditing] = useState(false);
+  const [currentExpense, setCurrentExpense] = useState(null);
 
-  const fetchExpenses = async () => {
+  const handleExpenseAdded = async (newExpense) => {
     try {
-      setLoading(true);
-      const data = await getExpenses();
-      setExpenses(data);
-    } catch (err) {
-      setError('Failed to load expenses');
-      console.error('Error fetching expenses:', err);
-    } finally {
-      setLoading(false);
+      await addExpense(newExpense);
+      // After successfully adding, re-fetch the expenses list
+      fetchExpenses();
+      // Optionally, show a success message or reset local form state if needed
+    } catch (error) {
+      console.error('Error adding expense:', error);
+      // Handle the error (e.g., display an error message to the user)
     }
   };
 
-  useEffect(() => {
-    fetchExpenses();
-  }, []);
 
-  const handleExpenseAdded = (newExpense) => {
-    setExpenses(prev => [...prev, newExpense]);
+  const handleDeleteExpense = (id) => {
+    deleteExpense(id);
   };
 
-  if (loading) return <div>Loading expenses...</div>;
-  if (error) return <div>{error}</div>;
+  const handleEditExpense = (expense) => {
+    setCurrentExpense(expense);
+    setIsEditing(true);
+  };
+
+  const handleUpdateExpense = (e, updatedExpense) => {
+    e.preventDefault();
+    updateExpense(updatedExpense);
+    setIsEditing(false);
+    setCurrentExpense(null);
+  };
+
+  const handleCancelEdit = () => {
+    setIsEditing(false);
+    setCurrentExpense(null);
+  };
 
   return (
     <div className="expenses-page">
       <h2>Expense Tracking</h2>
-      <ExpenseForm onExpenseAdded={handleExpenseAdded} />
-      <ExpenseList expenses={expenses} />
+      {!isEditing ? (
+        <ExpenseForm onExpenseAdded={handleExpenseAdded} /> // Pass the function to handle adding expenses
+      ) : (
+        <EditExpenseForm
+          expense={currentExpense}
+          onUpdateExpense={handleUpdateExpense}
+          onCancel={handleCancelEdit}
+        />
+      )}
+      <ExpenseList
+        expenses={expenses}
+        onDeleteExpense={handleDeleteExpense}
+        onEditExpense={handleEditExpense}
+      />
     </div>
   );
 };

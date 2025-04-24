@@ -13,7 +13,7 @@ function App() {
     <FinanceProvider>
       <BrowserRouter>
         <div className="app-container">
-          <Navigation />
+          <Navigation/>
           <main className="main-content">
             <Routes>
               <Route path="/" element={<Dashboard />} />

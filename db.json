@@ -91,34 +91,6 @@
   ],
   "expenses": [
     {
-      "item": "battery",
-      "category": "equipment",
-      "cost": 50000,
-      "date": "2025-04-16T00:00:00.000Z",
-      "id": 1
-    },
-    {
-      "item": "hammer",
-      "category": "equipment",
-      "cost": 1500,
-      "date": "2025-03-20T00:00:00.000Z",
-      "id": 2
-    },
-    {
-      "item": "Arrow",
-      "category": "equipment",
-      "cost": 150000,
-      "date": "2025-02-21T00:00:00.000Z",
-      "id": 3
-    },
-    {
-      "item": "maize seeds",
-      "category": "seeds",
-      "cost": 50000,
-      "date": "2025-03-15T00:00:00.000Z",
-      "id": 4
-    },
-    {
       "item": "Back-up Generator",
       "category": "equipment",
       "cost": 30000,

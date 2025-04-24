@@ -65,6 +65,17 @@
       "description": "Sold 98 chicken",
       "id": 1745486249526,
       "timestamp": "2025-04-24T09:17:29.526Z"
+    },
+    {
+      "source": "Rabbit sale",
+      "category": "livestock",
+      "amount": 4000,
+      "date": "2025-04-10",
+      "description": "quality",
+      "product": "Meat",
+      "volume": 50,
+      "id": 1745503085813,
+      "timestamp": "2025-04-24T13:58:05.813Z"
     }
   ],
   "expenses": [
@@ -102,6 +113,20 @@
       "cost": 30000,
       "date": "2025-04-24T00:00:00.000Z",
       "id": 5
+    },
+    {
+      "item": "Milking jelly",
+      "category": "other",
+      "cost": 500,
+      "date": "2025-04-24T00:00:00.000Z",
+      "id": 6
+    },
+    {
+      "item": "Farm prep",
+      "category": "labor",
+      "cost": 800,
+      "date": "2025-04-11T00:00:00.000Z",
+      "id": 7
     }
   ],
   "loans": [

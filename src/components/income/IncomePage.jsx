@@ -10,6 +10,7 @@ const IncomePage = () => {
   const [currentIncome, setCurrentIncome] = useState(null);
   const [newIncome, setNewIncome] = useState({
     source: '',
+    category: 'crop',
     amount: '',
     date: new Date().toISOString().split('T')[0],
     description: '',
@@ -25,6 +26,7 @@ const IncomePage = () => {
     });
     setNewIncome({
       source: '',
+      category: 'crop',
       amount: '',
       date: new Date().toISOString().split('T')[0],
       description: '',

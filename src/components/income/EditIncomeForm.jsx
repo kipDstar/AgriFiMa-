@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import categories from '../../utilis/categories';
-import './EditIncomeForm.css'; // Import the CSS file
+import './EditIncomeForm.css'; 
 
 const EditIncomeForm = ({ income, onUpdateIncome, onCancel }) => {
   const [editedIncome, setEditedIncome] = useState(income);
@@ -16,7 +16,7 @@ const EditIncomeForm = ({ income, onUpdateIncome, onCancel }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Basic validation (you can expand this)
+    // validation 
     if (!editedIncome.source || !editedIncome.amount || !editedIncome.date) {
       alert('Please fill all required fields');
       return;

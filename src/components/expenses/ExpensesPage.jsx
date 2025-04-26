@@ -14,10 +14,9 @@ const ExpensesPage = () => {
       await addExpense(newExpense);
       // After successfully adding, re-fetch the expenses list
       fetchExpenses();
-      // Optionally, show a success message or reset local form state if needed
     } catch (error) {
       console.error('Error adding expense:', error);
-      // Handle the error (e.g., display an error message to the user)
+      // Handle the error (display an error message to the user)
     }
   };
 
@@ -47,7 +46,7 @@ const ExpensesPage = () => {
     <div className="expenses-page">
       <h2>Expense Tracking</h2>
       {!isEditing ? (
-        <ExpenseForm onExpenseAdded={handleExpenseAdded} /> // Pass the function to handle adding expenses
+        <ExpenseForm onExpenseAdded={handleExpenseAdded} /> // Passes function to handle adding expenses
       ) : (
         <EditExpenseForm
           expense={currentExpense}

@@ -1,5 +1,4 @@
 import React from 'react';
-//import './ExpenseList.css'; // Uncomment if you have a CSS file
 
 const ExpenseList = ({ expenses, onDeleteExpense, onEditExpense }) => {
   return (

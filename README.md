@@ -1,6 +1,6 @@
 # Agri-Finance Tracker
 🚜 Project Overview
-- AgriFiMa is a Single Page Application (SPA) built with React to provide small-scale farmers and agricultural businesses with the tools they need to effectively manage their finances and explore loan opportunities. The application focuses on an intuitive user experience, making financial management accessible to users with varying levels of financial literacy.
+- AgriFiMa is a Single Page Application (SPA) built with React to provide small-scale farmers and agricultural businesses with the tools they need to effectively manage their finances and explore loan opportunities. The application focuses on an intuitive graphic-based user experience, making financial management accessible to users with varying levels of financial literacy.
 
 ## Features(overview)
 - Income Tracking: Easily record income sources (e.g., crop sales, livestock) with details like source, amount, and date.
